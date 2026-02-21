@@ -5,9 +5,9 @@
   tasks:
     - name: Use the shared data from the previous job
       ansible.builtin.debug:
-        msg: "Data from the previous job: {{ artifacts['flow1']['my_shared_data'] }}"
+        msg: "Data from the previous job: {{ my_shared_data}}"
 
     - name: Call the third job template
       ansible.builtin.debug:
-        msg: "{{artifacts}}"    
+        msg: "{{ my_shared_data }}"    
 
