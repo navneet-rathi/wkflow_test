@@ -7,3 +7,7 @@
       ansible.builtin.debug:
         msg: "Data from the previous job: {{ artifacts['flow1']['my_shared_data'] }}"
 
+    - name: Call the third job template
+      ansible.builtin.debug:
+        msg: "{{artifacts}}"    
+
