@@ -1,0 +1,9 @@
+---
+- name: To test if we can talk from job template to another job template
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Use the shared data from the previous job
+      ansible.builtin.debug:
+        msg: "Data from the previous job: {{ artifacts['flow1']['my_shared_data'] }}"
+

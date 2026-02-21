@@ -1,0 +1,13 @@
+---
+- name: To test if we can talk from job template to another job template
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Call the second job template
+      ansible.builtin.debug:
+        msg: "This is the first job template calling the second job template"
+        
+    - name: Set a variable to be used in a subsequent workflow job
+      ansible.builtin.set_stats:
+        data:
+          my_shared_data: "This value can be passed downstream"
